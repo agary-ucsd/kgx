@@ -12,6 +12,14 @@ from .neo_transformer import NeoTransformer
 from .logicterm_transformer import LogicTermTransformer
 from .transformer import Transformer
 
+from .sink import Sink
+from .debug_sink import DebugSink
+from .progress_sink import ProgressSink
+from .csv_sink import CsvSink
+
+from .source import Source
+from .neo_source import NeoSource
+
 from .validator import Validator
 from .prefix_manager import PrefixManager
 from .mapper import map_graph
