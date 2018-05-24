@@ -26,7 +26,9 @@ python setup.py install
 The above script can be found in [`environment.sh`](environment.sh)
 
 ## Command Line Usage
-Use the `--help` flag to get help. Right now there is a single command:
+
+Use the `--help` flag on any command to see how to use it.
+### Dump
 ```
 Usage: kgx dump [OPTIONS] [INPUT]... OUTPUT
 
@@ -65,8 +67,12 @@ File created at: target/x1n.graphml
 $ kgx dump tests/resources/monarch/biogrid_test.ttl target/x1n.json
 File created at: target/x1n.json
 ```
+### Neo4j download / upload
+The `neo4j-download` and `neo4j-upload` commands are for downloading from and uploading to a neo4j database. The `neo4j-download` command allows for filtering out a sub-graph and downloading in batches.
+### Relabelling
+The `load-mapping` command allows you to create a mapping, that can be used with the `dump` command to relabel fields. This is especially useful for merging cliques of identifiers to a single standard kind of identifier.
 
-An example of relabelling. First we load a csv file that describes how to
+Here is an example of relabelling. First we load a csv file that describes how to
 relabel fields.
 ```
 $ kgx load-mapping example-mapping source_id target_id tests/resources/mapping/mapping.csv
